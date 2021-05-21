@@ -6,7 +6,7 @@ public class ArbolAVL {
 
     private Nodo raiz;
 
-    public ArbolAVL(Nodo raiz) {
+    public ArbolAVL() {
         this.raiz = null;
     }
 
@@ -153,6 +153,9 @@ public class ArbolAVL {
         c.setHijoDerecho(rotacionIzquierda(c.getHijoDerecho()));
         temp = rotacionDerecha(c);
         return temp;
+    }
 
+    public Nodo getRaiz() {
+        return raiz;
     }
 }
