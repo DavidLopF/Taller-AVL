@@ -10,9 +10,6 @@ public class ArbolAVL {
         this.raiz = null;
     }
 
-    public Boolean arbolVacio() {
-        return raiz == null;
-    }
 
     public Nodo insertarBalanceado(Nodo nuevo, Nodo subArbol) {
         Nodo nuevoPadre = subArbol;
@@ -102,9 +99,8 @@ public class ArbolAVL {
     }
 
 
-
     public Nodo buscar(int a, Nodo raiz) {
-        if (arbolVacio()) {
+        if (raiz == null) {
             return null;
         } else if (raiz.getDato() == a) { // si lo encuentra lo retorna
             return raiz;

@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.ArbolAVL;
+import co.edu.unbosque.model.Nodo;
 import co.edu.unbosque.view.View;
 
 import java.util.ArrayList;
@@ -41,14 +42,20 @@ public class Controller {
                     funcionar();
                     break;
 
-                case 2:
+                case 2: // ELIMINAR DEL ARBOL
 
                     funcionar();
                     break;
 
                 case 3:
-
-
+                    dato = view.capturarInt("INGRESE DATO A BUSCAR EN EL ARBOL ");
+                    Nodo resultadoBuscqueda = arbolAVL.buscar(dato, arbolAVL.getRaiz());
+                    if (resultadoBuscqueda != null) {
+                        view.mostrarDato("ELEMENTO ENCONTRADO EN EL ARBOL !!!  VALOR DEL ELEMENTO " + resultadoBuscqueda.getDato());
+                        view.mostrarDato("CON FACTOR DE EQUILIBRIO DE : " + resultadoBuscqueda.getFe());
+                    } else {
+                        view.mostrarDato("NO SE HA ENCONTRADO EL ELEMENTO EN EL ARBOL :(");
+                    }
                     funcionar();
                     break;
 
